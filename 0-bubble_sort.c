@@ -5,6 +5,7 @@
 
 #include "sort.h"
 #include <stdio.h>
+#include <stddef.h>
 
 /**
  * bubble_sort - sorts an array in ascending order
