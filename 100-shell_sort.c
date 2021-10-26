@@ -1,3 +1,8 @@
+/*
+ * File: 100-shell_sort.c
+ * Auth: Brennan D Baraban
+ */
+
 #include "sort.h"
 
 /**

@@ -1,5 +1,5 @@
 /*
- * File: 1-insertion_sort_list.c
+ * File: 2-selection_sort.c
  * Auth: Dismas Kipchumba
  */
 
