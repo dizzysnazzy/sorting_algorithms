@@ -83,7 +83,7 @@ while (m->prev)
 {
 if (m->n < m->prev->n)
 {
-sorted = 0;
+sort = 0;
 m = m->prev;
 nodeswitch(list, &m);
 print_list(*list);
