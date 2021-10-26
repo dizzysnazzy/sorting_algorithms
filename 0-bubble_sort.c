@@ -13,22 +13,18 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-  unsigned int i, j, sizee;
-int swp;
- 
-sizee = size;
-if (sizee < 2 || array == NULL)
-return;
+int tmp;
+size_t i = 0, j = 0;
 
-for (i = 0; i < sizee; i++)
+for (i = 0; i < size; i++)
 {
-for (j = 0; j < sizee - i - 1; j++)
+for (j = 1; j < size; j++)
 {
-if (array[j] > array[j + 1])
+if (array[j - 1] > array[j])
 {
-swp = array[j];
-array[j] = array[j + 1];
-array[j + 1] = swp;
+tmp = array[j - 1];
+array[j - 1] = array[j];
+array[j] = tmp;
 print_array(array, size);
 }
 }
