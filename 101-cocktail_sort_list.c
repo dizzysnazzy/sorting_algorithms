@@ -24,7 +24,7 @@ return (len);
 }
 
 /**
- * switch_nodes - function swaps nodes at pointer p with the following node
+ * nodeswitch - function swaps nodes at pointer p with the following node
  * @list: head of list
  * @p: pointer to node
  */
