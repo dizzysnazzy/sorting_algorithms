@@ -5,6 +5,9 @@
 
 #include "sort.h"
 
+void quick_recursion(int *array, int left, int right, size_t size);
+int partition(int *array, int left, int right, size_t size);
+
 /**
  * quick_sort_hoare - sorts an array with the Quicksort algorithm
  * @array: array of ints to sort
