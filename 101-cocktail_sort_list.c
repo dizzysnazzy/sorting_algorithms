@@ -1,3 +1,8 @@
+/*
+ * File: 101-cocktail_sort_list.c
+ * Auth: Dismas Kipchumba
+ */
+
 #include "sort.h"
 
 /**
@@ -23,25 +28,25 @@ return (len);
  * @list: head of list
  * @p: pointer to node
  */
-void switch_nodes(listint_t **list, listint_t **p)
+void nodeswitch(listint_t **list, listint_t **p)
 {
-listint_t *one, *two, *three, *four;
+listint_t *a, *b, *c, *d;
 
-one = (*p)->prev;
-two = *p;
-three = (*p)->next;
-four = (*p)->next->next;
-two->next = four;
-if (four)
-four->prev = two;
-three->next = two;
-three->prev = two->prev;
-if (one)
-one->next = three;
+a = (*p)->prev;
+b = *p;
+c = (*p)->next;
+d = (*p)->next->next;
+b->next = d;
+if (d)
+d->prev = b;
+c->next = b;
+c->prev = b->prev;
+if (a)
+a->next = c;
 else
-*list = three;
-two->prev = three;
-*p = three;
+*list = c;
+b->prev = c;
+*p = c;
 }
 
 /**
@@ -51,40 +56,40 @@ two->prev = three;
  */
 void cocktail_sort_list(listint_t **list)
 {
-listint_t *p;
-int sorted = 0;
+listint_t *m;
+int sort = 0;
 
 if (!list || !*list || list_len(*list) < 2)
 return;
-p = *list;
-while (!sorted)
+m = *list;
+while (!sort)
 {
-sorted = 1;
-while (p->next)
+sort = 1;
+while (m->next)
 {
-if (p->n > p->next->n)
+if (m->n > m->next->n)
 {
-sorted = 0;
-switch_nodes(list, &p);
+sort = 0;
+nodeswitch(list, &p);
 print_list(*list);
 }
 else
-p = p->next;
+m = m->next;
 }
-if (sorted)
+if (sort)
 break;
-p = p->prev;
-while (p->prev)
+m = m->prev;
+while (m->prev)
 {
-if (p->n < p->prev->n)
+if (m->n < m->prev->n)
 {
 sorted = 0;
-p = p->prev;
-switch_nodes(list, &p);
+m = m->prev;
+nodeswitch(list, &p);
 print_list(*list);
 }
 else
-p = p->prev;
+m = m->prev;
 }
 }
 }
