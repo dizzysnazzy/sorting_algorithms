@@ -70,7 +70,7 @@ while (m->next)
 if (m->n > m->next->n)
 {
 sort = 0;
-nodeswitch(list, &p);
+nodeswitch(list, &m);
 print_list(*list);
 }
 else
@@ -85,7 +85,7 @@ if (m->n < m->prev->n)
 {
 sorted = 0;
 m = m->prev;
-nodeswitch(list, &p);
+nodeswitch(list, &m);
 print_list(*list);
 }
 else
