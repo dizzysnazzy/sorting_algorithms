@@ -1,3 +1,8 @@
+/*
+ * File: 1-insertion_sort_list.c
+ * Auth: Dismas Kipchumba
+ */
+
 #include "sort.h"
 /**
  *selection_sort - sort array with Selection sort algorithm
@@ -6,28 +11,28 @@
  */
 void selection_sort(int *array, size_t size)
 {
-int a = 0, b = 0;
+int tmp1 = 0, tmp2 = 0;
 size_t  i = 0, j = 0;
 
 if (array == NULL || size == 0)
 return;
 while (i < size)
 {
-a = array[i];
-b = j = i + 1;
+tmp1 = array[i];
+tmp2 = j = i + 1;
 while (j < size)
 {
-if (a > array[j])
+if (tmp1 > array[j])
 {
-a = array[j];
-b = j;
+tmp1 = array[j];
+tmp2 = j;
 }
 j++;
 }
-if (a != array[i])
+if (tmp1 != array[i])
 {
-array[b] = array[i];
-array[i] = a;
+array[tmp2] = array[i];
+array[i] = tmp1;
 print_array(array, size);
 }
 i++;
