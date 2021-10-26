@@ -13,15 +13,16 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-unsigned int i, j;
+  unsigned int i, j, sizee;
 int swp;
-
-if (size < 2 || array == NULL)
+ 
+sizee = size;
+if (sizee < 2 || array == NULL)
 return;
 
-for (i = 0; i < size; i++)
+for (i = 0; i < sizee; i++)
 {
-for (j = 0; j < size - i - 1; j++)
+for (j = 0; j < sizee - i - 1; j++)
 {
 if (array[j] > array[j + 1])
 {
