@@ -29,8 +29,8 @@ return (len);
  */
 void insertion_sort_list(listint_t **list)
 {
-listint_t *curr = NULL, *one = NULL;
-listint_t *two = NULL, *three = NULL, *four = NULL;
+listint_t *curr = NULL, *first = NULL;
+listint_t *second = NULL, *third = NULL, *fourth = NULL;
 
 if (!list || !(*list) || len_list(*list) < 2)
 return;
@@ -41,21 +41,21 @@ while (curr)
 {
 if (curr->prev && curr->n < curr->prev->n)
 {
-one = curr->prev->prev;
-two = curr->prev;
-three = curr;
-four = curr->next;
+first = curr->prev->prev;
+second = curr->prev;
+third = curr;
+fourth = curr->next;
 
-two->next = four;
-if (four)
-four->prev = two;
-three->next = two;
-three->prev = one;
-if (one)
-one->next = three;
+second->next = fourth;
+if (fourth)
+fourth->prev = second;
+third->next = second;
+third->prev = first;
+if (first)
+first->next = third;
 else
-*list = three;
-two->prev = three;
+*list = third;
+second->prev = third;
 curr = *list;
 print_list(*list);
 continue;
